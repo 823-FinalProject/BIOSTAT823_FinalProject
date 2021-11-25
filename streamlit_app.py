@@ -33,6 +33,7 @@ def user_input():
     return pd.DataFrame(user_info, index=[0])
 
 
+st.title("Prediction of Patient's Risk of Death based on Lab Test after Entering ICU")
 st.subheader("Variable Used for Death Risk Prediction:")
 st.text("""
     - Base Excess: the amount of excess or insufficient level of bicarbonate in the system.
