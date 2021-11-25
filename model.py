@@ -106,7 +106,6 @@ def ROC_plot(model_name):
         plt.xlabel('False Positive Rate')
         plt.ylabel('True Positive Rate')
         plt.legend(loc="lower right")
-        plt.title('ROC for Radial Basis Function SVM')
         plt.show()
 
     elif model_name in ['Random Forest', 'XGBoost']:
