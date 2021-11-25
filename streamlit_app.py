@@ -50,11 +50,14 @@ user_input = user_input()
 st.subheader("User Input: Blood Test Variables")
 st.write(user_input)
 st.subheader("Prediction Outcome: ")
-prediction_result = model.death_risk_predict(user_input.iloc[0, 0], user_input.iloc[0, 1], user_input.iloc[0, 2],
+prediction = model.death_risk_predict(user_input.iloc[0, 0], user_input.iloc[0, 1], user_input.iloc[0, 2],
                                              user_input.iloc[0, 3], user_input.iloc[0, 4], user_input.iloc[0, 5],
                                              user_input.iloc[0, 6], user_input.iloc[0, 7], user_input.iloc[0, 8],
                                              user_input.iloc[0, 9])
-st.write("The risk of death: ", prediction_result)
-#st.subheader("AUC-ROC Curve:")
-#figure = final_model.
-#st.pyplot(figure)
+st.write("The risk of death: ", prediction)
+st.subheader("Choose the model to view the ROC Curve:")
+figure_selection = ['Logistic', 'Linear SVM', 'Poly SVM', 'RBF SVM']
+st.set_option('deprecation.showPyplotGlobalUse', False)
+input = st.selectbox("Select", figure_selection)
+figure = model.ROC_plot(input)
+st.pyplot(figure)
