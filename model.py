@@ -44,9 +44,9 @@ def death_risk_predict(Base_Excess, Anion_Gap, Chloride, Creatinine, Potassium, 
 
 ROC_logis_svm = pd.read_csv('ROC_logis_svm.csv')
 AUC_dict = {'Logistic': 0.77,
-            'Linear_SVM': 0.77,
-            'Poly_SVM': 0.79,
-            'RBF_SVM': 0.75}
+            'Linear SVM': 0.77,
+            'Poly SVM': 0.79,
+            'RBF SVM': 0.75}
 
 
 def ROC_plot(model_name):
